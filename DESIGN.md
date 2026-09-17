@@ -3,7 +3,7 @@
 현대콘트롤전기 사이트의 시각 시스템. `docs/design/` 시안에서 실제로 만들어진 것을
 기록한 것이지, 만들기 전에 쓴 규칙서가 아니다.
 
-구현: `docs/design/assets/css/hd.css`
+구현: `src/app/hd.css`
 
 ## 세계
 
@@ -117,9 +117,9 @@
 
 ## 이미지 출처
 
-`docs/design/assets/img/`, `intro/img/`, `products/img/` — 현행 hdcontrol.co.kr에서
+`public/assets/img/`, `intro/img/`, `products/img/` — 현행 hdcontrol.co.kr에서
 수집한 실제 제품 사진, 도면, 인증서. 178장.
 
-`docs/design/assets/gen/` — Higgsfield 생성 이미지 5장 (2026-09-16). 실제 촬영물이
-아니다. `docs/design/assets/gen/PROVENANCE.md` 참조. 실제 공장과 제품 사진으로
+`public/assets/gen/` — Higgsfield 생성 이미지 5장 (2026-09-16). 실제 촬영물이
+아니다. `public/assets/gen/PROVENANCE.md` 참조. 실제 공장과 제품 사진으로
 교체해야 한다.

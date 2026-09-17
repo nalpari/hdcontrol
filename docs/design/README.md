@@ -1,16 +1,18 @@
 # 현대콘트롤전기 디자인 개편 시안
 
-hdcontrol.co.kr 한국어 사이트 26페이지의 디자인 시안. 정적 HTML이라 빌드 없이 바로
-열린다.
+hdcontrol.co.kr 한국어 사이트 26페이지의 디자인 시안. 실제 사이트는 이 시안을 옮긴
+`src/app/` 아래에 있고, 여기 남은 것은 콘텐츠와 조판의 기록이다.
 
-## 보는 법
+## 자산은 여기 없다
+
+`assets/`(이미지 186장, hd.css, hd.js)는 `public/assets/`와 중복이라 지웠다. 그래서
+이 HTML은 지금 그대로 열면 스타일도 이미지도 붙지 않는다. 실제로 보려면 살아있는
+사이트(`pnpm dev`)를 보고, 시안 원본이 필요하면 지우기 전 커밋에서 되살린다.
 
 ```
+git checkout d49fd30 -- docs/design/assets
 cd docs/design && python3 -m http.server 8899
-# http://localhost:8899/index.html
 ```
-
-`file://`로도 열리지만 서버로 봐야 상대경로가 온전하다.
 
 ## 무엇을 바꿨고 무엇을 지켰나
 
@@ -70,8 +72,8 @@ URL 구조를 바꿨다. 실제 적용 시 기존 `.php` 주소에서 301 리다
 
 ## 고칠 것 / 결정할 것
 
-1. **생성 이미지 5장 교체** — `assets/gen/`은 Higgsfield 생성물이고 실제 공장이
-   아니다. `assets/gen/PROVENANCE.md` 참조. 실제 촬영 사진이 필요하다.
+1. **생성 이미지 5장 교체** — `public/assets/gen/`은 Higgsfield 생성물이고 실제
+   공장이 아니다. `public/assets/gen/PROVENANCE.md` 참조. 실제 촬영 사진이 필요하다.
 2. **공지사항·질문과 답변이 비어 있다** — 현행 사이트에도 게시물이 없어 빈 상태를
    설계해 두었다. 게시판을 계속 둘지, 공지만 남길지 결정 필요.
 3. **문의 폼은 동작하지 않는다** — 시안이라 제출이 막혀 있다. 오류 상태 표시를
@@ -95,8 +97,8 @@ python3 docs/design/_build/build.py
 | `_build/data.py` | 회사 정보, 네비게이션, 연혁, 인증, 자재 |
 | `_build/products.py` | 제품 페이지 본문 |
 | `_build/build.py` | 조판 |
-| `assets/css/hd.css` | 디자인 시스템 전부 |
-| `assets/js/hd.js` | 네비게이션, 인증 필터, 아코디언 |
+| `src/app/hd.css` | 디자인 시스템 전부. 시안 이후 수정분이 들어있다 |
+| `src/components/*.tsx` | 네비게이션, 인증 필터, 아코디언 (`assets/js/hd.js`를 옮긴 것) |
 
 ## 검수 결과
 
