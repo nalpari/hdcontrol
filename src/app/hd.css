@@ -394,6 +394,10 @@ a:hover { text-decoration-color: var(--signal); }
 @media (max-width: 1100px) {
   .hdr__tel { display: none; }
   .burger { display: grid; place-items: center; }
+  /* .nav가 fixed 서랍이 되면 흐름에서 빠져 .nav의 margin-left: auto가 죽는다.
+     남은 flex 자식은 .brand와 .hdr__util뿐이라 util이 로고 옆에 붙는다.
+     오른쪽 끝으로 미는 일을 여기서 다시 맡는다. */
+  .hdr__util { margin-left: auto; }
   .nav {
     /* .hdr의 backdrop-filter가 fixed 자식의 컨테이닝 블록이 된다.
        그래서 bottom:0으로는 높이가 잡히지 않는다. 높이를 직접 준다. */
